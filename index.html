@@ -3,68 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Action Studio - Privacy Policy</title>
+    <title>Action Studio - Business Manager</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; line-height: 1.6; }
-        h1 { color: #1E3A5F; border-bottom: 2px solid #3B82F6; padding-bottom: 10px; }
-        h2 { color: #1E3A5F; margin-top: 30px; }
-        .updated { color: #666; font-style: italic; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0e1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1E3A5F 0%, #0a0e1a 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .logo .action { color: #E53935; }
+        .logo .studio { color: #ffffff; }
+        .tagline {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(59,130,246,0.2);
+            color: #3B82F6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        .content {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #3B82F6 0%, #1E3A5F 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            transition: transform 0.2s;
+        }
+        .download-btn:hover { transform: scale(1.02); }
+        .download-btn .sub {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+        .features {
+            margin-top: 30px;
+        }
+        .features h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 10px;
+        }
+        .feature-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #3B82F6;
+            margin-bottom: 4px;
+        }
+        .feature-card p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+        .screenshots {
+            margin-top: 30px;
+        }
+        .screenshots h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .screenshot-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screenshot-scroll img {
+            width: 200px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            flex-shrink: 0;
+        }
+        .info-section {
+            margin-top: 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-row .label { color: rgba(255,255,255,0.5); }
+        .info-row .value { color: #fff; font-weight: 500; }
+        .install-guide {
+            margin-top: 30px;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .install-guide h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #3B82F6;
+            margin-bottom: 10px;
+        }
+        .install-guide ol {
+            padding-left: 18px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+        }
+        .footer a { color: #3B82F6; text-decoration: none; }
+        .org-code {
+            margin-top: 12px;
+            background: rgba(255,193,7,0.1);
+            border: 1px solid rgba(255,193,7,0.2);
+            border-radius: 10px;
+            padding: 12px 16px;
+            text-align: center;
+        }
+        .org-code .label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .org-code .code {
+            font-size: 20px;
+            font-weight: 800;
+            color: #FFC107;
+            margin-top: 4px;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy - Action Studio</h1>
-    <p class="updated">Last updated: February 18, 2026</p>
+    <div class="hero">
+        <div class="logo">
+            <span class="action">action</span> <span class="studio">studio</span>
+        </div>
+        <div class="tagline">All in One Business Manager</div>
+        <div class="version-badge">v1.2 &middot; 18 MB</div>
+    </div>
 
-    <h2>1. Introduction</h2>
-    <p>Action Studio ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+    <div class="content">
+        <a href="https://github.com/actionstudio1/actionstudio-privacy/releases/download/v1.2/ActionStudio-v1.2.apk" class="download-btn">
+            Download APK
+            <span class="sub">Android 8.0+ &middot; Free</span>
+        </a>
 
-    <h2>2. Information We Collect</h2>
-    <p>We collect the following information when you use Action Studio:</p>
-    <ul>
-        <li><strong>Account Information:</strong> Name, email address, and phone number (optional) provided during registration.</li>
-        <li><strong>Business Data:</strong> Purchase orders, tasks, complaints, leave records, fines, checklists, and master data that you create within the app.</li>
-        <li><strong>Device Information:</strong> Device type and operating system version for app compatibility purposes.</li>
-    </ul>
+        <div class="org-code">
+            <div class="label">Organization Code for Registration</div>
+            <div class="code">SATYAMMALL</div>
+        </div>
 
-    <h2>3. How We Use Your Information</h2>
-    <p>Your information is used solely to:</p>
-    <ul>
-        <li>Provide and maintain the Action Studio service</li>
-        <li>Sync your business data across devices</li>
-        <li>Authenticate your identity and manage your account</li>
-        <li>Improve app performance and user experience</li>
-    </ul>
+        <div class="install-guide">
+            <h3>How to Install</h3>
+            <ol>
+                <li>Tap <b>Download APK</b> above</li>
+                <li>Open the downloaded file</li>
+                <li>If prompted, allow "Install from unknown sources"</li>
+                <li>Tap <b>Install</b> and open the app</li>
+                <li>Register using the organization code above</li>
+            </ol>
+        </div>
 
-    <h2>4. Data Storage & Security</h2>
-    <p>Your data is stored securely using:</p>
-    <ul>
-        <li><strong>Local Storage:</strong> Data is stored locally on your device using encrypted database storage.</li>
-        <li><strong>Cloud Storage:</strong> Data is synced to Google Firebase (Firestore) with industry-standard encryption in transit and at rest.</li>
-    </ul>
-    <p>We implement appropriate security measures to protect your data against unauthorized access, alteration, or destruction.</p>
+        <div class="features">
+            <h2>Features</h2>
+            <div class="feature-card">
+                <h3>Purchase Order Management</h3>
+                <p>Create, track, and manage purchase orders. Full order pipeline with status tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Task Management</h3>
+                <p>Assign tasks, set priorities, track progress across your team.</p>
+            </div>
+            <div class="feature-card">
+                <h3>HR Management</h3>
+                <p>Leave approvals, fine tracking, complaint management, and employee delegation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Checklists</h3>
+                <p>Create reusable templates, run checklists with real-time progress tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Reports & Cloud Sync</h3>
+                <p>Business insights, secure cloud backup, works offline with auto sync.</p>
+            </div>
+        </div>
 
-    <h2>5. Data Sharing</h2>
-    <p>We do NOT sell, trade, or share your personal or business data with third parties. Your data is only accessible to:</p>
-    <ul>
-        <li>You and members of your organization (based on role permissions)</li>
-        <li>Google Firebase infrastructure (as our cloud service provider)</li>
-    </ul>
+        <div class="info-section">
+            <div class="info-row">
+                <span class="label">Version</span>
+                <span class="value">1.2</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Size</span>
+                <span class="value">18 MB</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Requires</span>
+                <span class="value">Android 8.0+</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Category</span>
+                <span class="value">Business</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Price</span>
+                <span class="value">Free</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Contact</span>
+                <span class="value">info@actionstudio.in</span>
+            </div>
+        </div>
 
-    <h2>6. Organization Data</h2>
-    <p>Action Studio uses an organization-based model. Data created within an organization is accessible to authorized members of that organization based on their assigned roles (Admin, Manager, Purchaser, Employee).</p>
-
-    <h2>7. Data Retention</h2>
-    <p>Your data is retained as long as your account is active. You may request deletion of your account and associated data by contacting us at the email address below.</p>
-
-    <h2>8. Children's Privacy</h2>
-    <p>Action Studio is not intended for use by children under 13 years of age. We do not knowingly collect personal information from children.</p>
-
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this policy.</p>
-
-    <h2>10. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <p><strong>Email:</strong> info@actionstudio.in</p>
-
+        <div class="footer">
+            <p>&copy; 2026 Action Studio. All rights reserved.</p>
+            <p style="margin-top: 8px;"><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </div>
 </body>
 </html>
